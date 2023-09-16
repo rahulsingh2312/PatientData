@@ -1,6 +1,6 @@
 import React from "react";
 import "./navbar.css";
-import healthReport from "../../assets/health-report.png";
+import healthReport from "../../assets/maxresdefault.png";
 import { loadAccount } from "../../store/interactions";
 import { useDispatch, useSelector } from "react-redux";
 import Blockies from "react-blockies";
@@ -25,9 +25,10 @@ const Navbar = () => {
     });
   };
   return (
-    <div className="Navbar">
+    <div className="relative Navbar">
+      <img className="absolute top-3 left-28 w-14 h-10" src={healthReport} />
       <div className="nav__name">
-        <img src={healthReport} alt="" width="40" height="40" />
+        {/* <img  src={healthReport} alt="" /> */}
         <h2> Medical Record </h2>
       </div>
       <div className="nav__networkSelector">
@@ -41,11 +42,11 @@ const Navbar = () => {
              Network
           </option>
           {/* <option value="0x7a69">Localhost</option> */}
-          <option value="0x5">Goerli</option>
+          <option value="0x5">Goerli TestNET</option>
 
-          
+{/*           
       <option value="0xaa36a7">Sepolia</option>
-      console.log("Selected chainId:", chainId);
+      console.log("Selected chainId:", chainId); */}
         </select>
       </div>
       <div className="nav__balance">
@@ -74,7 +75,7 @@ const Navbar = () => {
             />
           </a>
         ) : (
-          <button className="nav__balance-box" onClick={connectHandler}>
+          <button className="nav__balance-box bg-white" onClick={connectHandler}>
             Connect
           </button>
         )}
