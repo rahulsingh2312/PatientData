@@ -102,7 +102,7 @@ const Data = () => {
     const searchInput = document.querySelector("[data-search]");
     const sName = document.querySelectorAll("[data-name]");
     const sCard = document.querySelectorAll("[data-sCard]");
-    const sContainer = document.querySelector("[data-sContainer]");
+    // const sContainer = document.querySelector("[data-sContainer]");
 
     searchInput.addEventListener("input", (e) => {
       const value = e.target.value.toLowerCase();
@@ -144,20 +144,20 @@ const Data = () => {
         <form
           onSubmit={handleSubmit}
           autoComplete="off"
-          className="mt-4 flex justify-center mb-2"
+          className="mt-4 flex justify-center mb-2 z-20"
         >
           <input
             onChange={handleInput}
             id="studentSearch"
-            className=" selection:bg-blue-500 py-2 pl-3 outline-none text-white caret-white bg-blue-400 placeholder:text-white rounded-tl-[10px] rounded-bl-[10px]"
+            className="selection:bg-black py-2 pl-3 outline-none text-white caret-black bg-blue-400 placeholder:text-black rounded-tl-[10px] rounded-bl-[10px]"
             type="text"
             placeholder="Search by name"
             value={name}
             data-search
           ></input>
-          <div className="bg-blue-400 rounded-tr-[10px] rounded-br-[10px]">
+          <div className="pr-5 pl-5 pt-2 rounded-tr-[10px] rounded-br-[10px]">
             <button type="submit">
-              <FaSearch className="text-white w-6 h-6 mt-2 pr-2 " />
+              <FaSearch className="text-black w-6 mt-2 pr-2 " />
             </button>
           </div>
         </form>
@@ -177,15 +177,16 @@ const Data = () => {
                 <th>Diagnosis</th>
                 <th>Treatment</th>
 
-                <th>Delete</th>
+                {/* <th>Delete</th> */}
               </tr>
             </thead>
             <tbody>
               {orderData &&
                 orderData.map((data, index) => {
                   return (
+                    index > 70 &&
                     <tr key={index} data-sCard>
-                      <td>{index + 1}</td>
+                      <td>{index - 70}</td>
                       {/* <td>{data.recordIdNew}</td> */}
                       <td>{data.formattedTimestamp}</td>
                       <td data-name>{data.name}</td>
@@ -196,14 +197,14 @@ const Data = () => {
                       <td>{data.diagnosis}</td>
                       <td>{data.treatment}</td>
 
-                      <td>
-                        <button
+                      {/* <td> */}
+                        {/* <button
                           className="delete-button"
                           onClick={(e) => deleteHandler(e, data)}
                         >
                           Delete
-                        </button>
-                      </td>
+                        </button> */}
+                      {/* </td> */}
                     </tr>
                   );
                 })}

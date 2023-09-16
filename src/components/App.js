@@ -36,7 +36,7 @@ function App() {
     loadBlockchainData();
   });
   return (
-    <div className="App">
+    <div className="App bg-white">
       <div className="navbar">
         <Navbar />
         <Option />

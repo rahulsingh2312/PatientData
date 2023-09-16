@@ -51,7 +51,7 @@ const Form = () => {
           value={name === 0 ? "" : name}
           onChange={(e) => setName(e.target.value)}
           required
-          placeholder="Aman Dhattarwal"
+          placeholder="Rahul"
         />
 
         <label htmlFor="age">Age:</label>
@@ -60,7 +60,7 @@ const Form = () => {
           id="age"
           name="age"
           required
-          placeholder="29"
+          placeholder="17"
           value={age === 0 ? "" : age}
           onChange={(e) => setAge(e.target.value)}
         />
